@@ -25,22 +25,12 @@
         font-weight: 700;
         color: $white;
         z-index: 2;
-        word-wrap: break-word;
-
-        .break-after::after {
-            content: '';
-        }
     
         @media (max-width: 767.98px) {
             font-size: 24px;
             width: 225px;
             text-align: left;
             white-space: normal;
-
-            .break-after::after {
-                content: "\A";
-                white-space: pre;
-            }
         }
 
     }
