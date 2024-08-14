@@ -1,7 +1,13 @@
+@import 'colors.scss';
+
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Lilita One", 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {     
-    margin: 0;
+body {
+    line-height: 1.6;
+    background-color: #F6F4F2;
 }

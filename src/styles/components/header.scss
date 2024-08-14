@@ -1,45 +1,53 @@
 @import '../themes/colors.scss';
 
-.navContainer {
+header {
+  background: $color4;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+}
+
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: $black;
-  max-width: 1280px;
-  padding: 0 20px;
-  width: 100%;
-  box-sizing: border-box;
 
-  @media (max-width: 767.98px) {
-    min-width: 335px;
-  }
+  &__logo {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
 
-  &__logoIcon {
-    color: $color-primary;
-    height: 68px;
-    width: 210.32px;
-
-    @media (max-width: 767.98px) {
-      height: 46.88px;
-      width: 145px;
+    img {
+      border-radius: 50%;
+      border: 2px solid $color1;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
   }
 
-  &__link {
-    color: $black;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight : 500;
-    text-align: right;
-    margin: 0px 10px;
+  &__list {
+    display: flex;
+    list-style: none;
+    height: 80px;
+    margin: 0 15px 0 0;
 
-    @media (max-width: 767.98px) {
-      font-size: 12px;
-      text-transform: uppercase;
-    }
+    &__link {
+      display: flex;
+      text-decoration: none;
+      align-items: center;
+      color: #F6F4F2;
+      padding: 0px 15px;
+      font-weight: 500;
+      height : 100%;
 
-    &:hover{
-      text-decoration : underline;
+      &:hover {
+        background-color: $color1;
+        color: $color4;
+      }
     }
   }
 }

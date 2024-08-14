@@ -4,10 +4,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 50px;
   height: 100%;
   width: 100%;
-  padding-top: 45px;
   min-width: 375px;
 
   @media (max-width: 767.98px) {
@@ -18,39 +16,15 @@
   .home {
     display: flex;
     flex-direction: column;
-    max-width: 1240px;
-    gap: 40px;
-    justify-content: center;
     align-items: center;
+    width: 100%;
     flex-grow: 1;
-    padding: 0px 20px;
   
     @media (max-width: 767.98px) {
       gap: 22px;
       min-width: 335px;
     }
     
-    &__gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
-      justify-content: space-around;
-      background-color : $color-secondary;
-      gap: 50px;
-      padding: 50px;
-      border-radius: 25px;
-  
-      @media (max-width: 700px) {
-        padding:0;
-        background-color: $white;
-        gap: 22px;
-      }
-  
-      &__link {
-        text-decoration: none;
-        color: inherit;
-        display: block;
-      }
-    }
   }
 }
 

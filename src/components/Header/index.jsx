@@ -1,23 +1,22 @@
-import { Link } from 'react-router-dom'
-import { ReactComponent as Logo } from '../../assets/logo.svg'
 import '../../styles/components/header.scss'
 import '../../styles/themes/global.scss'
+import Portrait from '../../assets/images/quentinparonneau.jpg'
 
 function Header() {
   return (
-    <div className='navContainer'>
-      <Link to="/">
-        <Logo className='navContainer__logoIcon'/>
-      </Link>
-      <nav>
-        <Link className='navContainer__link' to="/">
-          Accueil
-        </Link>
-        <Link className='navContainer__link' to="/apropos">
-          A propos
-        </Link>
+    <header>
+      <nav className="nav">
+        <div className="nav__logo">
+          <a href="#banner"><img src={Portrait} alt="Logo Quentin Paronneau"/></a>
+        </div>
+        <ul className="nav__list">
+          <li className="nav__list__item"><a href="#apropos" className="nav__list__link" data-parent="about">À propos</a></li>
+          <li className="nav__list__item"><a href="#skills" className="nav__list__link" data-parent="services">Compétences</a></li>
+          <li className="nav__list__item"><a href="#portfolio" className="nav__list__link" data-parent="works">Portfolio</a></li>
+          <li className="nav__list__item"><a href="#contact" className="nav__list__link" data-parent="contact">Contact</a></li>
+        </ul>
       </nav>
-    </div>
+    </header>
   )
 }
 
