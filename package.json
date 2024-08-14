@@ -1,6 +1,7 @@
 {
-  "name": "kasa",
+  "name": "Quentin Paronneau - Portfolio",
   "version": "0.1.0",
+  "homepage": "https://Humtsi.github.io/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.0",

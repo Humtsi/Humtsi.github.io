@@ -1,0 +1,63 @@
+@import '../themes/colors.scss';
+
+#apropos, #portfolio {
+    background-color: $color4;
+	color : #F6F4F2;
+
+    .section-line {
+        background-color:#F6F4F2;
+    }
+}
+
+#contact, #skills {
+    background-color: #F6F4F2;
+	color : $color4;
+}
+
+section {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+
+    .children{
+        display: flex;
+        justify-content: center;
+        margin:30px 0;
+    }
+}
+
+.section-header {
+	position: relative;
+    text-align: center;
+	align-items: center;
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 160px;
+        font-weight: 300;
+        font-size: 32px;
+        z-index: 1;
+    }
+
+    &__text {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 0;
+        z-index: 0;
+        opacity: 0.15;
+        font-weight: 700;
+    }
+}
+
+.section-line {
+    background: $color4;
+    width: 55px;
+    height: 1px;
+    margin: 10px auto;
+}
