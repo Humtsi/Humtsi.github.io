@@ -1,0 +1,27 @@
+[
+	{
+		"title": "Booki",
+		"picture" : "booki.png"
+	},
+	
+	{
+		"title": "Sophie Bluel",
+		"picture" : "sophiebluel.png"
+	},
+
+	{
+		"title": "Nina Carducci",
+		"picture" : "ninacarducci.png"
+	},
+
+	{
+		"title": "Kasa",
+		"picture" : "kasa.png"
+	},
+
+	{
+		"title": "Mon Vieux Grimoire",
+		"picture" : "monvieuxgrimoire.png"
+	}
+
+]

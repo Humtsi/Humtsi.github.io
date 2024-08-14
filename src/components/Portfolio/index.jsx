@@ -1,17 +1,23 @@
-import '../../styles/components/skills.scss'
+import Modale from '../../components/Modale'
+import Data from '../../data/projets.json'
+import '../../styles/components/portfolio.scss'
 import '../../styles/themes/global.scss'
-
 
 function Portfolio() {
     return (
-        <div className="skills">
-            <div className="skills__container">
-                <div className="skills__container__txt">Frontend</div>
-            </div>
-            <div className="flux"></div>
-            <div className="skills__container">
-                <div className="skills__container__txt">Backend</div>
-            </div>
+        <div className="portfolio">
+            {Data?.map((projet, index) => {
+                
+                const imageSrc = require(`../../assets/images/${projet.picture}`)
+                
+                return (
+                    <Modale 
+                        key={index} 
+                        title={projet.title} 
+                        picture={imageSrc} 
+                    />
+                )
+            })}
         </div>
     )
 }

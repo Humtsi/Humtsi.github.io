@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import '../../styles/components/header.scss'
+import '../../styles/components/modale.scss'
 import '../../styles/themes/global.scss'
 
 
 // Configurer l'élément principal de l'application pour l'accessibilité
 Modal.setAppElement('#root'); // Assurez-vous que cet élément correspond à l'élément racine de votre application
 
-function Modale() {
+function Modale({title='', picture=''}) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   const openModal = () => {
@@ -20,11 +20,16 @@ function Modale() {
 
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
+      <button className="btn-modale" onClick={openModal}>
+        <h3 className="btn-modale__title">{title}</h3>
+        <img className="btn-modale__img"src={picture} alt={`Site ${title}`}/>
+        <p className="btn-modale__btn">Voir le projet</p>
+      </button>
+      
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        contentLabel="Example Modal"
+        contentLabel={`Modale du projet ${title}`}
         style={{
           content: {
             top: '50%',
@@ -39,8 +44,11 @@ function Modale() {
           }
         }}
       >
-        <h2>Hello, I'm a modal!</h2>
-        <button onClick={closeModal}>Close Modal</button>
+        <div className='modale'>
+          <h2>{title}</h2>
+          <img src={picture} alt={`Image of ${title}`} />
+          <button onClick={closeModal}>Close Modal</button>
+        </div>
       </Modal>
     </div>
   )
