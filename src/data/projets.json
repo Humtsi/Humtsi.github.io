@@ -2,37 +2,84 @@
 	{
 		"title": "Booki",
 		"picture" : "booki.webp",
-		"github" : "https://github.com/Humtsi/Booki"
+		"mission" : "Ce projet consiste à intégrer l'interface responsive d'un site d'agence de voyage avec les maquettes Figma et une note de synthèse sur les spécificités du projet.",
+		"tags" : [
+			"Implémenter une interface responsive avec HTML et CSS",
+			"Intégrer du contenu conformément à une maquette Figma",
+			"Versionner son projet avec Git et Github"
+		],
+		"github" : "https://github.com/Humtsi/Booki",
+		"remarques" :"Félicitations, la soutenance est bien préparée et le projet est encourageant pour la suite !"
 	},
 	
 	{
 		"title": "Sophie Bluel",
 		"picture" : "sophiebluel.webp",
-		"github" : "https://github.com/Humtsi/SophieBluel"
+		"mission" : "Ce projet consiste à créer une page web dynamique pour le site internet d'une architecte d'intérieur en utilisant JavaScript et en communiquant avec une API.",
+		"tags" : [
+			"Gérer les événements utilisateurs avec JavaScript",
+			"Manipuler les éléments du DOM avec JavaScript",
+			"Récupérer les données utilisateurs dans le JavaScript via des formulaires"
+		],
+		"github" : "https://github.com/Humtsi/SophieBluel",
+		"remarques" :"Félicitations, très bonne présentation orale, projet validé!"
 	},
 
 	{
 		"title": "Nina Carducci",
 		"picture" : "ninacarducci.webp",
-		"github" : "https://github.com/Humtsi/NinaCarducci"
+		"mission" : "Ce projet consiste à optimiser le référencement d’un site, en améliorant sa performance et son accessibilité.",
+		"tags" : [
+			"Optimiser les performances d’un site web",
+			"Débugger un site web grâce aux Chrome DevTools",
+			"Rédiger un cahier de recette pour tester un site"
+		],
+		"github" : "https://github.com/Humtsi/NinaCarducci",
+		"remarques" : "Votre travail montre une expertise technique approfondie et une approche méthodique pour maintenir et améliorer un site web. Votre engagement envers l'amélioration continue et votre utilisation efficace des outils de développement et d'analyse sont des atouts précieux qui contribueront à la réussite de vos projets futurs."
 	},
 
 	{
 		"title": "Kasa",
 		"picture" : "kasa.webp",
-		"github" : "https://github.com/Humtsi/Kasa"
+		"mission" : "Ce projet consiste à implémenter le front-end d’une application en utilisant React et React Router pour créer une expérience utilisateur moderne et réactive.",
+		"tags" : [
+			"Initialiser une application avec Create React App",
+			"Configurer la navigation entre les pages de l'application avec React Router",
+			"Développer des éléments de l'interface d'un site web grâce à des composants React",
+			"Mettre en œuvre des animations CSS",
+			"Développer une interface web avec Sass"
+		],
+		"github" : "https://github.com/Humtsi/Kasa",
+		"remarques" : "Quentin a bien expliqué ses choix techniques et démontré une bonne compréhension des concepts de React et React Router. Son projet est complet et fonctionnel. Félicitations !"
 	},
 
 	{
 		"title": "Mon Vieux Grimoire",
 		"picture" : "monvieuxgrimoire.webp",
-		"github" : "https://github.com/Humtsi/Mon-Vieux-Grimoire"
+		"mission" : "Ce projet consiste à développer le back-end d'un site de notation de livres.",
+		"tags" : [
+			"Implémenter un modèle logique de données conformément à la réglementation avec MongoDB",
+			"Mettre en œuvre des opérations CRUD de manière sécurisée avec Node.js & Express",
+			"Stocker des données de manière sécurisée avec Bcrypt et JWT",
+			"Gestion du téléchargement et de l'optimisation des images"
+		],
+		"github" : "https://github.com/Humtsi/Mon-Vieux-Grimoire",
+		"remarques" :"Quentin a su expliquer avec clarté et précision les différentes étapes de son projet. Il a démontré une bonne maîtrise des concepts fondamentaux, tels que la mise en place d’un modèle logique de données, le stockage sécurisé des données, ainsi que l’implémentation des opérations CRUD de manière sécurisée. Il a également montré une compréhension approfondie des sujets abordés. La présentation était bien structurée et fluide, bravo Quentin !"
 	},
 
 	{
 		"title": "Menu Maker",
 		"picture" : "menumaker.webp",
-		"github" : "https://github.com/Humtsi/Booki"
+		"mission" : "Ce projet consiste à planifier le développement du site web grâce aux maquette, aux spécifications fonctionnelles et aux User Stories du site.",
+		"tags" : [
+			"Découper une fonctionnalités en tâches pour préparer le développement",
+			"Mettre en place une méthode de veille technologique sur Feedly",
+			"Présenter la solution technique",
+			"Rédiger les spécifications techniques d'un projet web à partir de besoins fonctionnels",
+			"Suivre le déroulement du projet grâce à Kanban"
+		],
+		"github" : "https://github.com/Humtsi/MenuMaker",
+		"remarques" : "Excellente soutenance. L'ensemble des points demandés a été abordé, le temps a été parfaitement respecté et les réponses aux questions étaient pertinentes. Excellent travail et surtout, excellente présentation. Continue comme ça !"
 	}
 
 ]

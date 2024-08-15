@@ -15,6 +15,10 @@ function Portfolio() {
                         key={index} 
                         title={projet.title}
                         picture={imageSrc}
+                        github={projet.github}
+                        mission={projet.mission}
+                        tags={projet.tags}
+                        remarques={projet.remarques}
                     />
                 )
             })}

@@ -8,7 +8,7 @@ import '../../styles/themes/global.scss'
 // Configurer l'élément principal de l'application pour l'accessibilité
 Modal.setAppElement('#root'); // Assurez-vous que cet élément correspond à l'élément racine de votre application
 
-function Modale({title='', picture=''}) {
+function Modale({title='', picture='', github='', tags=[], mission='', remarques=''}) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
   const openModal = () => {
@@ -18,6 +18,7 @@ function Modale({title='', picture=''}) {
   const closeModal = () => {
     setModalIsOpen(false)
   }
+
   useEffect(() => {
     // Désactiver le défilement du body lorsque la modale est ouverte
     document.body.style.overflow = modalIsOpen ? 'hidden' : 'auto';
@@ -28,7 +29,7 @@ function Modale({title='', picture=''}) {
   }, [modalIsOpen]);
 
   return (
-    <div className="modale">
+    <div className="portfolio-content">
       <button className="btn-modale" style={{backgroundImage: `url(${picture})`}} onClick={openModal}>
         <div className="hover-card">
           <span>Projet {title}</span>
@@ -42,31 +43,34 @@ function Modale({title='', picture=''}) {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel={`Modale du projet ${title}`}
-        style={{
-          content: {
-            display:'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '70%',
-            maxHeight: '80vh',
-            maxWidth: '800px',
-            padding: '20px',
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-            overflow: 'auto',
-          },
-          overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.75)'
-          }
-        }}
+        className= 'modal'
       >
       <div className='modale-content'>
         <h2 className='modale-content__title'>{title}</h2>
+        <div className='modale-content__projet'>
+          <img src={picture} className='modale-content__projet--img' alt={`Description du projet ${title}`}/>
+          <div className='modale-content__projet--description'>
+            <div>
+              <h4>Mission :</h4>
+              <div>{mission}</div>
+            </div>
+            <div>
+              <h4>Compétences développées :</h4>
+              <div className="tagsContainer">
+                {tags.map((tag, index) => (
+                  <div key={index} className='tagsContainer__tag'>
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4>Remarques de l'évaluateur :</h4>
+              <div>{remarques}</div>
+            </div>
+            <a href={github} target="_blank" rel="noopener noreferrer">Lien Github</a>
+          </div>
+        </div>
         <button className='modale-content__btn'onClick={closeModal}>Fermer</button>
       </div>
       </Modal>

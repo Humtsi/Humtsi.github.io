@@ -14,7 +14,7 @@ function Apropos() {
 			<a href="#portfolio"> à voir.</a>
 			<br/>
 			Vous souhaitez avoir mon CV au format PDF c'est par 
-			<a href="https://Humtsi.github.io/assets/docs/CV-Quentin Paronneau.pdf"> ici.</a>
+			<a href="https://Humtsi.github.io/assets/docs/CV-Quentin Paronneau.pdf" target="_blank" rel="noopener noreferrer"> ici.</a>
 		</p>
 	</div>
   )

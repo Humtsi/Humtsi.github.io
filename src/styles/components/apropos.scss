@@ -7,5 +7,10 @@
     font-weight: 300;
     line-height: 1.4;
     margin: 50px 0;
-    color: #F6F4F2;
+    color: $white;
+
+    a {
+        text-decoration: underline;
+        color : $color2;
+    }
 }
