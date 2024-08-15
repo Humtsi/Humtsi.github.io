@@ -13,8 +13,8 @@ function Portfolio() {
                 return (
                     <Modale 
                         key={index} 
-                        title={projet.title} 
-                        picture={imageSrc} 
+                        title={projet.title}
+                        picture={imageSrc}
                     />
                 )
             })}

@@ -1,27 +1,38 @@
 [
 	{
 		"title": "Booki",
-		"picture" : "booki.png"
+		"picture" : "booki.webp",
+		"github" : "https://github.com/Humtsi/Booki"
 	},
 	
 	{
 		"title": "Sophie Bluel",
-		"picture" : "sophiebluel.png"
+		"picture" : "sophiebluel.webp",
+		"github" : "https://github.com/Humtsi/SophieBluel"
 	},
 
 	{
 		"title": "Nina Carducci",
-		"picture" : "ninacarducci.png"
+		"picture" : "ninacarducci.webp",
+		"github" : "https://github.com/Humtsi/NinaCarducci"
 	},
 
 	{
 		"title": "Kasa",
-		"picture" : "kasa.png"
+		"picture" : "kasa.webp",
+		"github" : "https://github.com/Humtsi/Kasa"
 	},
 
 	{
 		"title": "Mon Vieux Grimoire",
-		"picture" : "monvieuxgrimoire.png"
+		"picture" : "monvieuxgrimoire.webp",
+		"github" : "https://github.com/Humtsi/Mon-Vieux-Grimoire"
+	},
+
+	{
+		"title": "Menu Maker",
+		"picture" : "menumaker.webp",
+		"github" : "https://github.com/Humtsi/Booki"
 	}
 
 ]

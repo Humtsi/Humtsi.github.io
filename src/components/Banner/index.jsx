@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import anime from 'animejs/lib/anime.es.js';
-import Portrait from '../../assets/images/quentinparonneau.jpg'
+import Portrait from '../../assets/images/quentinparonneau.webp'
 import '../../styles/components/banner.scss'
 import '../../styles/themes/global.scss'
 

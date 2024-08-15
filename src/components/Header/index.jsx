@@ -1,6 +1,6 @@
 import '../../styles/components/header.scss'
 import '../../styles/themes/global.scss'
-import Portrait from '../../assets/images/quentinparonneau.jpg'
+import Portrait from '../../assets/images/quentinparonneau.webp'
 
 function Header() {
   return (

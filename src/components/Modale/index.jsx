@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
+import React, { useState, useEffect } from 'react'
+import Modal from 'react-modal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../../styles/components/modale.scss'
 import '../../styles/themes/global.scss'
 
@@ -17,38 +18,57 @@ function Modale({title='', picture=''}) {
   const closeModal = () => {
     setModalIsOpen(false)
   }
+  useEffect(() => {
+    // Désactiver le défilement du body lorsque la modale est ouverte
+    document.body.style.overflow = modalIsOpen ? 'hidden' : 'auto';
+
+    return () => {
+      document.body.style.overflow = 'auto'; // Réactiver le défilement lorsque la modale est fermée
+    };
+  }, [modalIsOpen]);
 
   return (
-    <div>
-      <button className="btn-modale" onClick={openModal}>
-        <h3 className="btn-modale__title">{title}</h3>
-        <img className="btn-modale__img"src={picture} alt={`Site ${title}`}/>
-        <p className="btn-modale__btn">Voir le projet</p>
+    <div className="modale">
+      <button className="btn-modale" style={{backgroundImage: `url(${picture})`}} onClick={openModal}>
+        <div className="hover-card">
+          <span>Projet {title}</span>
+          <div className="hover-card__seemore"> 
+            <span>Voir plus  </span> 
+            <FontAwesomeIcon icon="arrow-right" />
+          </div>
+        </div>
       </button>
-      
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel={`Modale du projet ${title}`}
         style={{
           content: {
+            display:'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '70%',
+            maxHeight: '80vh',
+            maxWidth: '800px',
+            padding: '20px',
             top: '50%',
             left: '50%',
             right: 'auto',
             bottom: 'auto',
             marginRight: '-50%',
-            transform: 'translate(-50%, -50%)'
+            transform: 'translate(-50%, -50%)',
+            overflow: 'auto',
           },
           overlay: {
             backgroundColor: 'rgba(0, 0, 0, 0.75)'
           }
         }}
       >
-        <div className='modale'>
-          <h2>{title}</h2>
-          <img src={picture} alt={`Image of ${title}`} />
-          <button onClick={closeModal}>Close Modal</button>
-        </div>
+      <div className='modale-content'>
+        <h2 className='modale-content__title'>{title}</h2>
+        <button className='modale-content__btn'onClick={closeModal}>Fermer</button>
+      </div>
       </Modal>
     </div>
   )

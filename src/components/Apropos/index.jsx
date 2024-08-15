@@ -11,10 +11,10 @@ function Apropos() {
 			Je conçois et réalise des sites web du cahier des charges à la mise en ligne.
 			<br/>
 			J'ai quelques projets intéressants
-			<a href="#portfolio">à voir.</a>
+			<a href="#portfolio"> à voir.</a>
 			<br/>
-			Vous souhaitez avoir mon CV au format PDF c'est par
-			<a href="https://www.gmanzola.fr/assets/docs/CV_GAEL_MANZOLA.pdf">ici.</a>
+			Vous souhaitez avoir mon CV au format PDF c'est par 
+			<a href="https://Humtsi.github.io/assets/docs/CV-Quentin Paronneau.pdf"> ici.</a>
 		</p>
 	</div>
   )
