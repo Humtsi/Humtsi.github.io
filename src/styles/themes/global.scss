@@ -11,3 +11,19 @@ body {
     line-height: 1.6;
     background-color: #F6F4F2;
 }
+
+h2 {
+    font-size: 36px;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
+}
+
+p {
+    font-size: 26px;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+}

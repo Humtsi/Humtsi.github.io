@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import anime from 'animejs/lib/anime.es.js';
+import { useEffect } from 'react'
+import anime from 'animejs/lib/anime.es.js'
 import Portrait from '../../assets/images/quentinparonneau.webp'
 import '../../styles/components/banner.scss'
 import '../../styles/themes/global.scss'
@@ -7,133 +7,229 @@ import '../../styles/themes/global.scss'
 function Banner() {
 
   useEffect(() => {
-    const element = document.querySelector('#banner');
-    if (element) {
-      function fitElementToParent(el, padding) {
-        var timeout = null;
-        function resize() {
-          if (timeout) clearTimeout(timeout);
-          anime.set(el, {scale: 1});
-          var pad = padding || 0;
-          var parentEl = el.parentNode;
-          var elOffsetWidth = el.offsetWidth - pad;
-          var parentOffsetWidth = parentEl.offsetWidth;
-          var ratio = parentOffsetWidth / elOffsetWidth;
-          timeout = setTimeout(anime.set(el, {scale: ratio}), 10);
+    var c = document.getElementById("c");
+    var ctx = c.getContext("2d");
+    var cH;
+    var cW;
+    var bgColor = "#F6F4F2";
+    var animations = [];
+    var circles = [];
+    
+    var colorPicker = (function() {
+      var colors = ["#C9DABF", "#9CA986", "#F6F4F2"];
+      var index = 0;
+      function next() {
+        index = index++ < colors.length-1 ? index : 0;
+        return colors[index];
+      }
+      function current() {
+        return colors[index]
+      }
+      return {
+        next: next,
+        current: current
+      }
+    })();
+    
+    function removeAnimation(animation) {
+      var index = animations.indexOf(animation);
+      if (index > -1) animations.splice(index, 1);
+    }
+    
+    function calcPageFillRadius(x, y) {
+      var l = Math.max(x - 0, cW - x);
+      var h = Math.max(y - 0, cH - y);
+      return Math.sqrt(Math.pow(l, 2) + Math.pow(h, 2));
+    }
+    
+    function addClickListeners() {
+      document.addEventListener("touchstart", handleEvent);
+      document.addEventListener("mousedown", handleEvent);
+    };
+    
+    function handleEvent(e) {
+        if (e.touches) { 
+          e.preventDefault();
+          e = e.touches[0];
         }
-        resize();
-        window.addEventListener('resize', resize);
-        }
-      
-        var advancedStaggeringAnimation = (function() {
-      
-        var staggerVisualizerEl = document.querySelector('.stagger-visualizer');
-        var dotsWrapperEl = staggerVisualizerEl.querySelector('.dots-wrapper');
-        var dotsFragment = document.createDocumentFragment();
-        var grid = [20, 10];
-        var cell = 55;
-        var numberOfElements = grid[0] * grid[1];
-        var animation;
-        var paused = true;
+        var currentColor = colorPicker.current();
+        var nextColor = colorPicker.next();
+        var targetR = calcPageFillRadius(e.pageX, e.pageY);
+        var rippleSize = Math.min(200, (cW * .4));
+        var minCoverDuration = 750;
         
-        // Calculate the initial index for the desired position (15, 5)
-        var x = 13; // Column index
-        var y = 4; // Row index
-        var initialIndex = y * grid[0] + x; // Calculate the index based on the position (15, 5)
-        var index = initialIndex;
-        var nextIndex = initialIndex;
-
-        fitElementToParent(staggerVisualizerEl, 0);
-      
-        for (var i = 0; i < numberOfElements; i++) {
-          var dotEl = document.createElement('div');
-          dotEl.classList.add('dot');
-          dotsFragment.appendChild(dotEl);
-        }
-      
-        dotsWrapperEl.appendChild(dotsFragment);
-      
-        anime.set('.stagger-visualizer .cursor', {
-          translateX: anime.stagger(-cell, {grid: grid, from: index, axis: 'x'}),
-          translateY: anime.stagger(-cell, {grid: grid, from: index, axis: 'y'}),
-          translateZ: 0,
-          scale: 1.5,
+        var pageFill = new Circle({
+          x: e.pageX,
+          y: e.pageY,
+          r: 0,
+          fill: nextColor
         });
-      
-        function play() {
-      
-          paused = false;
-          if (animation) animation.pause();
-      
-          nextIndex = initialIndex;
-      
-          animation = anime.timeline({
-            easing: 'easeInOutQuad',
-            complete: play
+        var fillAnimation = anime({
+          targets: pageFill,
+          r: targetR,
+          duration:  Math.max(targetR / 2 , minCoverDuration ),
+          easing: "easeOutQuart",
+          complete: function(){
+            bgColor = pageFill.fill;
+            removeAnimation(fillAnimation);
+          }
+        });
+        
+        var ripple = new Circle({
+          x: e.pageX,
+          y: e.pageY,
+          r: 0,
+          fill: currentColor,
+          stroke: {
+            width: 3,
+            color: currentColor
+          },
+          opacity: 1
+        });
+        var rippleAnimation = anime({
+          targets: ripple,
+          r: rippleSize,
+          opacity: 0,
+          easing: "easeOutExpo",
+          duration: 900,
+          complete: removeAnimation
+        });
+        
+        var particles = [];
+        for (var i=0; i<32; i++) {
+          var particle = new Circle({
+            x: e.pageX,
+            y: e.pageY,
+            fill: currentColor,
+            r: anime.random(24, 48)
           })
-          .add({
-            targets: '.stagger-visualizer .cursor',
-            keyframes: [
-              { scale: .75, duration: 120}, 
-              { scale: 2.5, duration: 220},
-              { scale: 1.5, duration: 450},
-            ],
-            duration: 300
-          })
-          .add({
-            targets: '.stagger-visualizer .dot',
-            keyframes: [
-              {
-                translateX: anime.stagger('-2px', {grid: grid, from: index, axis: 'x'}),
-                translateY: anime.stagger('-2px', {grid: grid, from: index, axis: 'y'}),
-                duration: 100
-              }, {
-                translateX: anime.stagger('4px', {grid: grid, from: index, axis: 'x'}),
-                translateY: anime.stagger('4px', {grid: grid, from: index, axis: 'y'}),
-                scale: anime.stagger([2.6, 1], {grid: grid, from: index}),
-                duration: 225
-              }, {
-                translateX: 0,
-                translateY: 0,
-                scale: 1,
-                duration: 1200,
-              }
-            ],
-            delay: anime.stagger(80, {grid: grid, from: index})
-          }, 30)
-          .add({
-            targets: '.stagger-visualizer .cursor',
-            translateX: { value: anime.stagger(-cell, {grid: grid, from: nextIndex, axis: 'x'}) },
-            translateY: { value: anime.stagger(-cell, {grid: grid, from: nextIndex, axis: 'y'}) },
-            scale: 1.5,
-            easing: 'cubicBezier(.075, .2, .165, 1)'
-          }, '-=800')
-      
-          index = nextIndex;
-      
+          particles.push(particle);
         }
+        var particlesAnimation = anime({
+          targets: particles,
+          x: function(particle){
+            return particle.x + anime.random(rippleSize, -rippleSize);
+          },
+          y: function(particle){
+            return particle.y + anime.random(rippleSize * 1.15, -rippleSize * 1.15);
+          },
+          r: 0,
+          easing: "easeOutExpo",
+          duration: anime.random(1000,1300),
+          complete: removeAnimation
+        });
+        animations.push(fillAnimation, rippleAnimation, particlesAnimation);
+    }
+    
+    function extend(a, b){
+      for(var key in b) {
+        if(b.hasOwnProperty(key)) {
+          a[key] = b[key];
+        }
+      }
+      return a;
+    }
+    
+    var Circle = function(opts) {
+      extend(this, opts);
+    }
+    
+    Circle.prototype.draw = function() {
+      ctx.globalAlpha = this.opacity || 1;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+      if (this.stroke) {
+        ctx.strokeStyle = this.stroke.color;
+        ctx.lineWidth = this.stroke.width;
+        ctx.stroke();
+      }
+      if (this.fill) {
+        ctx.fillStyle = this.fill;
+        ctx.fill();
+      }
+      ctx.closePath();
+      ctx.globalAlpha = 1;
+    }
+    
+    var animate = anime({
+      duration: Infinity,
+      update: function() {
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, cW, cH);
+        animations.forEach(function(anim) {
+          anim.animatables.forEach(function(animatable) {
+            animatable.target.draw();
+          });
+        });
+      }
+    });
+    
+    var resizeCanvas = function() {
+      cW = window.innerWidth;
+      cH = window.innerHeight;
+      c.width = cW * devicePixelRatio;
+      c.height = cH * devicePixelRatio;
+      ctx.scale(devicePixelRatio, devicePixelRatio);
+    };
+    
+    (function init() {
+      resizeCanvas();
+      if (window.CP) {
+        // CodePen's loop detection was causin' problems
+        // and I have no idea why, so...
+        window.CP.PenTimer.MAX_TIME_IN_LOOP_WO_EXIT = 6000; 
+      }
+      window.addEventListener("resize", resizeCanvas);
+      addClickListeners();
+      if (!!window.location.pathname.match(/fullcpgrid/)) {
+        startFauxClicking();
+      }
+      handleInactiveUser();
+    })();
+    
+    function handleInactiveUser() {
+      var inactive = setTimeout(function(){
+        fauxClick(cW/2, cH/2);
+      }, 2000);
       
-        play();
+      function clearInactiveTimeout() {
+        clearTimeout(inactive);
+        document.removeEventListener("mousedown", clearInactiveTimeout);
+        document.removeEventListener("touchstart", clearInactiveTimeout);
+      }
       
-      })();
+      document.addEventListener("mousedown", clearInactiveTimeout);
+      document.addEventListener("touchstart", clearInactiveTimeout);
+    }
+    
+    function startFauxClicking() {
+      setTimeout(function(){
+        fauxClick(anime.random( cW * .2, cW * .8), anime.random(cH * .2, cH * .8));
+        startFauxClicking();
+      }, anime.random(200, 900));
+    }
+    
+    function fauxClick(x, y) {
+      var fauxClick = new Event("mousedown");
+      fauxClick.pageX = x;
+      fauxClick.pageY = y;
+      document.dispatchEvent(fauxClick);
     }
   }, []);
 
   return (
   <section id="banner">
-    <div className="banner-animation">
-      <div className="banner-animation__wrapper">
-        <div className="stagger-visualizer">
-          <div className="cursor color-red"></div>
-          <div className="dots-wrapper"></div>
+    <canvas id="c"></canvas>
+    <div className="banner__title">
+      <p className="banner__title__text">
+        Bonjour,<br/>je m'appelle Quentin Paronneau,<br/>je suis Developpeur Web
+      </p>
+      <div className="banner__title__img">     
+        <img  src={Portrait} alt="Portrait Quentin Paronneau"/>   
+        <div className="hover">
+          <span>Click me !</span>
         </div>
       </div>
-    </div>
-    <div className="banner__title">
-      <div className="banner__title__text">
-        Bonjour,<br/>je m'appelle Quentin Paronneau,<br/>je suis Developpeur Web
-      </div>
-      <img className="banner__title__img" src={Portrait} alt="Portrait Quentin Paronneau"/>
     </div>
   </section>
   )
