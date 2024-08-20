@@ -10,6 +10,7 @@
     width: 100%;
     gap: 139px;
     min-width: 375px;
+    flex: 1;
 
     @media (max-width: 767.98px) {
         padding-top: 20px;
@@ -26,7 +27,7 @@
         height: 100%;
         max-width: 1240px;
         width: 100%;
-        color: $color-primary;
+        color: $color4;
         padding: 0 20px;
         box-sizing: border-box;
       
@@ -61,7 +62,7 @@
         &__link {
             font-size: 18px;
             font-weight: 500;
-            color: $black;
+            color: $color4;
     
             @media (max-width: 767.98px) {
                 font-size: 14px;
