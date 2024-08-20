@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect} from 'react'
 import Modal from 'react-modal'
+import useAnimateOnScroll from '../../hooks/useAnimateOnScroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../../styles/components/modale.scss'
 import '../../styles/themes/global.scss'
@@ -10,6 +11,7 @@ Modal.setAppElement('#root'); // Assurez-vous que cet élément correspond à l'
 
 function Modale({title='', picture='', github='', tags=[], mission='', remarques=''}) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const ref = useAnimateOnScroll();
 
   const openModal = () => {
     setModalIsOpen(true)
@@ -21,16 +23,16 @@ function Modale({title='', picture='', github='', tags=[], mission='', remarques
 
   useEffect(() => {
     // Désactiver le défilement du body lorsque la modale est ouverte
-    document.body.style.overflow = modalIsOpen ? 'hidden' : 'auto';
+    document.body.style.overflow = modalIsOpen ? 'hidden' : 'auto'
 
     return () => {
-      document.body.style.overflow = 'auto'; // Réactiver le défilement lorsque la modale est fermée
-    };
-  }, [modalIsOpen]);
+      document.body.style.overflow = 'auto' // Réactiver le défilement lorsque la modale est fermée
+    }
+  }, [modalIsOpen])
 
   return (
     <div className="portfolio-content">
-      <button className="btn-modale" style={{backgroundImage: `url(${picture})`}} onClick={openModal}>
+      <button className="btn-modale animated-element" style={{backgroundImage: `url(${picture})`}} onClick={openModal} ref={ref}>
         <div className="hover-card">
           <span>Projet {title}</span>
           <div className="hover-card__seemore"> 

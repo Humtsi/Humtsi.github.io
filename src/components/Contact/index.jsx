@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
+import useAnimateOnScroll from '../../hooks/useAnimateOnScroll'
 import '../../styles/components/contact.scss'
 import '../../styles/themes/global.scss'
 
 function Contact() {
-    const [state, handleSubmit] = useForm("xkgwzand");
-    const [submitted, setSubmitted] = useState(false);
+    const [state, handleSubmit] = useForm("xkgwzand")
+    const [submitted, setSubmitted] = useState(false)
+    const ref = useAnimateOnScroll()
 
     const handleFormSubmit = (event) => {
         event.preventDefault(); // Prévenir le comportement par défaut du formulaire
@@ -14,7 +16,7 @@ function Contact() {
     };
 
     return (
-        <div className='form-container'>
+        <div className='form-container animated-element' ref={ref}>
             {/* Afficher le formulaire seulement si l'envoi n'est pas réussi */}
             {!state.succeeded && (
                 <form className="form" onSubmit={handleFormSubmit}>
@@ -26,6 +28,7 @@ function Contact() {
                                 type="text"
                                 name="lastname"
                                 placeholder="Nom"
+                                autoComplete="true"
                                 required
                             />
                             <ValidationError
@@ -41,6 +44,7 @@ function Contact() {
                                 type="text"
                                 name="firstname"
                                 placeholder="Prénom"
+                                autoComplete="true"
                                 required
                             />
                             <ValidationError
@@ -56,6 +60,7 @@ function Contact() {
                         type="email"
                         name="email"
                         placeholder="Votre adresse e-mail"
+                        autoComplete="true"
                         required
                     />
                     <ValidationError
@@ -86,7 +91,7 @@ function Contact() {
                 <p>Merci pour votre message ! Je vous contacterai bientôt.</p>
             )}
         </div>
-    );
+    )
 }
 
 export default Contact;

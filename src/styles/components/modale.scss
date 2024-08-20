@@ -16,7 +16,7 @@
     background-repeat: no-repeat;
     cursor: pointer;
     position: relative;
-    
+
     @media (max-width: 767.98px) {
         width: 565px;
         height: 270px;
@@ -59,6 +59,8 @@
     }
 }
 
+
+
 .modal {
     display: flex;
     flex-direction: column;
@@ -73,6 +75,7 @@
     right: auto;
     bottom: auto;
     margin-right: -50%;
+    border: none;
     transform: translate(-50%, -50%);
 }
 

@@ -1,10 +1,12 @@
+import useAnimateOnScroll from '../../hooks/useAnimateOnScroll'
 import '../../styles/components/apropos.scss'
 import '../../styles/themes/global.scss'
 
 
 function Apropos() {
+	const ref = useAnimateOnScroll()
   return (
-	<div className="description">
+	<div className="description animated-element" ref={ref}>
 		<p>
 			Récemment certifié <strong>Développeur Web.</strong>
 			<br/>
@@ -14,7 +16,7 @@ function Apropos() {
 			<a href="#portfolio"> à voir.</a>
 			<br/>
 			Vous souhaitez avoir mon CV au format PDF c'est par 
-			<a href="https://Humtsi.github.io/assets/docs/CV-Quentin Paronneau.pdf" target="_blank" rel="noopener noreferrer"> ici.</a>
+			<a href="https://Humtsi.github.io/assets/docs/CV-QuentinParonneau.pdf" target="_blank" rel="noopener noreferrer"> ici.</a>
 		</p>
 	</div>
   )
