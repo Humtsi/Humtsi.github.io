@@ -7,15 +7,19 @@
     height: 100%;
     justify-content: center;
 }
+
 .form {
     display: flex;
     position: relative;
 	width: 100%;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    font-size: 20px;
 
     &__names {
         display: flex;
+        width: 100%;
         justify-content: space-between;
 
         .name {
@@ -26,10 +30,12 @@
     }
 
     label {
+        font-size: 26px;
         margin-bottom: 6px;
         color: $color4;
         font-size: 1.125rem;
         font-weight: 500;
+        align-self: start;
     }
 
     input, textarea {
@@ -43,9 +49,11 @@
     }
 
     button {
+        font-size: 26px;
         background-color: $color4;
         color:$white;
         padding: 10px;
         border-radius: 15px;
+        width: fit-content;
     }
 }

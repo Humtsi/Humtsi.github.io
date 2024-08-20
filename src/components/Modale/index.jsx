@@ -56,13 +56,13 @@ function Modale({title='', picture='', github='', tags=[], mission='', remarques
             </div>
             <div>
               <h4>Compétences développées :</h4>
-              <div className="tagsContainer">
+              <ul>
                 {tags.map((tag, index) => (
-                  <div key={index} className='tagsContainer__tag'>
+                  <li key={index}>
                     {tag}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
             <div>
               <h4>Remarques de l'évaluateur :</h4>
