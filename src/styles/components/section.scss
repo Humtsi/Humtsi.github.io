@@ -46,12 +46,14 @@
             justify-content: center;
             height: 160px;
             font-weight: 300;
-            font-size: 36px;
             z-index: 1;
 
             @media (max-width: 768px) {
-                font-size: 24px;
                 height: 104px;
+            }
+
+            @media (max-width: 575.98px) {
+                height: 80px;
             }
         }
     
@@ -60,7 +62,6 @@
             position: absolute;
             left: 0;
             right: 0;
-            text-align: center;
             top: 0;
             z-index: 0;
             opacity: 0.15;
@@ -68,6 +69,10 @@
 
             @media (max-width: 768px) {
                 font-size: 65px;
+            }
+
+            @media (max-width: 575.98px) {
+                font-size: 50px;
             }
         }
     }

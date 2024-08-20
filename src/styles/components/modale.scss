@@ -23,8 +23,8 @@
     }
 
     @media (max-width: 575.98px) {
-        width: 400px;
-        height: 190px;
+        width: 335px;
+        height: 160px;
     }
 
     .hover-card {
@@ -95,6 +95,7 @@
     padding: 30px;
     font-size: 18px;
     overflow-y: auto;
+    color: $color4;
 
     &__title {
         font-size: 30px;
@@ -111,10 +112,9 @@
         width: 100%;
 
         &--img {
-            width: 100%;
+            width: 70%;
             height: auto;
-            max-height: 450px;
-            object-fit: cover;
+            object-fit: content;
         }
 
         &--description {
@@ -125,7 +125,6 @@
             gap: 20px;
 
             li {
-                text-decoration: dotted;
                 margin-left: 20px;
             }
         }
