@@ -63,6 +63,7 @@ function Banner() {
         r: 0,
         fill: nextColor
       });
+
       var fillAnimation = anime({
         targets: pageFill,
         r: targetR,
@@ -85,6 +86,7 @@ function Banner() {
         },
         opacity: 1
       });
+
       var rippleAnimation = anime({
         targets: ripple,
         r: rippleSize,
@@ -104,6 +106,7 @@ function Banner() {
         })
         particles.push(particle);
       }
+      
       var particlesAnimation = anime({
         targets: particles,
         x: function(particle){

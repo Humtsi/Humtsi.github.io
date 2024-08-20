@@ -68,6 +68,7 @@ function Contact() {
                         field="email"
                         errors={state.errors}
                     />
+                    <label htmlFor="massage">Votre Message</label>
                     <textarea
                         name="message"
                         id="message"
