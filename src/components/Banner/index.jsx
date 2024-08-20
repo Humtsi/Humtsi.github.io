@@ -42,8 +42,8 @@ function Banner() {
     }
 
     function addClickListeners() {
-      document.addEventListener("touchstart", handleEvent, { passive: false });
-      document.addEventListener("mousedown", handleEvent, { passive: false });
+      document.addEventListener("touchstart", handleEvent);
+      document.addEventListener("mousedown", handleEvent);
     };
 
     function handleEvent(e) {
