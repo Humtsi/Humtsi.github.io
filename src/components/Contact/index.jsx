@@ -10,10 +10,10 @@ function Contact() {
     const ref = useAnimateOnScroll()
 
     const handleFormSubmit = (event) => {
-        event.preventDefault(); // Prévenir le comportement par défaut du formulaire
-        handleSubmit(event); // Appeler la fonction handleSubmit de Formspree
-        setSubmitted(true); // Mettre à jour l'état pour afficher le message de succès
-    };
+        event.preventDefault() // Prévenir le comportement par défaut du formulaire
+        handleSubmit(event) // Appeler la fonction handleSubmit de Formspree
+        setSubmitted(true) // Mettre à jour l'état pour afficher le message de succès
+    }
 
     return (
         <div className='form-container animated-element' ref={ref}>
@@ -94,4 +94,4 @@ function Contact() {
     )
 }
 
-export default Contact;
+export default Contact

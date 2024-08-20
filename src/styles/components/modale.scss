@@ -50,7 +50,7 @@
             position: absolute;
             right: 20px;
             bottom: 20px;
-            gap:10px;
+            gap: 10px;
         }
     }
     
@@ -58,8 +58,6 @@
         opacity: 1;
     }
 }
-
-
 
 .modal {
     display: flex;
@@ -75,13 +73,13 @@
     right: auto;
     bottom: auto;
     margin-right: -50%;
-    border: none;
     transform: translate(-50%, -50%);
+    outline: none;
 }
 
 /* Styles pour l'overlay */
 .modal-overlay {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     top: 0;
     left: 0;
@@ -129,6 +127,10 @@
 
             li {
                 margin-left: 20px;
+            }
+
+            a {
+                text-decoration: underline;
             }
         }
 

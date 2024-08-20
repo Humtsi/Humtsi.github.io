@@ -7,11 +7,11 @@ import '../../styles/themes/global.scss'
 
 
 // Configurer l'élément principal de l'application pour l'accessibilité
-Modal.setAppElement('#root'); // Assurez-vous que cet élément correspond à l'élément racine de votre application
+Modal.setAppElement('#root') // Assurez-vous que cet élément correspond à l'élément racine de votre application
 
 function Modale({title='', picture='', github='', tags=[], mission='', remarques=''}) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
-  const ref = useAnimateOnScroll();
+  const ref = useAnimateOnScroll()
 
   const openModal = () => {
     setModalIsOpen(true)
@@ -80,4 +80,4 @@ function Modale({title='', picture='', github='', tags=[], mission='', remarques
   )
 }
 
-export default Modale;
+export default Modale
