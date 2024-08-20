@@ -6,16 +6,16 @@ import '../../styles/themes/global.scss'
 function Footer() {
   return (
     <footer>
-        <div className="logo">
-          <div className="logo__reseaux">
-            <a href="https://github.com/Humtsi"><img src={LogoGit} alt="Logo Github Quentin Paronneau"/></a>
-          </div>
-          <div className="logo__reseaux">
-            <a href="https://www.linkedin.com/in/quentin-paronneau-650b97123/"><img src={LogoLinkedin} alt='Logo Linkedin Quentin Paronneau'/></a>
-          </div>
+      <div className="logo">
+        <div className="logo__reseaux">
+          <a href="https://github.com/Humtsi" target="_blank" rel="noopener noreferrer"><img src={LogoGit} alt="Logo Github Quentin Paronneau"/></a>
         </div>
-        <span>Réalisé par Quentin Paronneau</span>
-      </footer>
+        <div className="logo__reseaux">
+          <a href="https://www.linkedin.com/in/quentin-paronneau-650b97123/" target="_blank" rel="noopener noreferrer"><img src={LogoLinkedin} alt='Logo Linkedin Quentin Paronneau'/></a>
+        </div>
+      </div>
+      <span>Réalisé par Quentin Paronneau</span>
+    </footer>
   )
 }
 
