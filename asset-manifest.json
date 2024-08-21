@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a2283b66.css",
+    "main.js": "/static/js/main.bd264024.js",
+    "static/media/frontend.png": "/static/media/frontend.41b1e30cfa4fcbe3327a.png",
+    "static/media/backend.png": "/static/media/backend.76771ba7a05806e9bc88.png",
+    "static/media/ninacarducci.webp": "/static/media/ninacarducci.c976ed445c8efd981efc.webp",
+    "static/media/sophiebluel.webp": "/static/media/sophiebluel.d32426f82c0d314a890b.webp",
+    "static/media/kasa.webp": "/static/media/kasa.13ecd4395a04ece14c89.webp",
+    "static/media/booki.webp": "/static/media/booki.4509057b930fd0446706.webp",
+    "static/media/monvieuxgrimoire.webp": "/static/media/monvieuxgrimoire.041bfd12f655590ceab6.webp",
+    "static/media/menumaker.webp": "/static/media/menumaker.11750bf2c39404bb96ff.webp",
+    "static/media/quentinparonneau.webp": "/static/media/quentinparonneau.c140e15736258d23806b.webp",
+    "index.html": "/index.html",
+    "main.a2283b66.css.map": "/static/css/main.a2283b66.css.map",
+    "main.bd264024.js.map": "/static/js/main.bd264024.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a2283b66.css",
+    "static/js/main.bd264024.js"
+  ]
+}
