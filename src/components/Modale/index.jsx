@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import Modal from 'react-modal'
 import useAnimateOnScroll from '../../hooks/useAnimateOnScroll'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import '../../styles/components/modale.scss'
 import '../../styles/themes/global.scss'
 
@@ -37,7 +37,7 @@ function Modale({title='', picture='', github='', tags=[], mission='', remarques
           <span>Projet {title}</span>
           <div className="hover-card__seemore"> 
             <span>Voir plus  </span> 
-            <FontAwesomeIcon icon="arrow-right" />
+            <ArrowForwardIcon style={{color: '#5F6F65'}}/>
           </div>
         </div>
       </button>
