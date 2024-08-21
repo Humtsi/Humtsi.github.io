@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
-import useAnimateOnScroll from '../../hooks/useAnimateOnScroll'
+import useAnimateOnScroll from '../../utils/hooks/useAnimateOnScroll'
 import '../../styles/components/contact.scss'
 import '../../styles/themes/global.scss'
 
@@ -27,7 +27,7 @@ function Contact() {
                                 id="lastname"
                                 type="text"
                                 name="lastname"
-                                placeholder="Nom"
+                                placeholder="Votre nom"
                                 autoComplete="true"
                                 required
                             />
@@ -43,7 +43,7 @@ function Contact() {
                                 id="firstname"
                                 type="text"
                                 name="firstname"
-                                placeholder="Prénom"
+                                placeholder="Votre prénom"
                                 autoComplete="true"
                                 required
                             />
@@ -68,7 +68,7 @@ function Contact() {
                         field="email"
                         errors={state.errors}
                     />
-                    <label htmlFor="massage">Votre Message</label>
+                    <label htmlFor="massage">Message</label>
                     <textarea
                         name="message"
                         id="message"

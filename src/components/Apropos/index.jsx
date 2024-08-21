@@ -1,4 +1,4 @@
-import useAnimateOnScroll from '../../hooks/useAnimateOnScroll'
+import useAnimateOnScroll from '../../utils/hooks/useAnimateOnScroll'
 import '../../styles/components/apropos.scss'
 import '../../styles/themes/global.scss'
 

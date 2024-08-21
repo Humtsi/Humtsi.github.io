@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import Modal from 'react-modal'
-import useAnimateOnScroll from '../../hooks/useAnimateOnScroll'
+import useAnimateOnScroll from '../../utils/hooks/useAnimateOnScroll'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import '../../styles/components/modale.scss'
 import '../../styles/themes/global.scss'
@@ -46,6 +46,7 @@ function Modale({title='', picture='', github='', tags=[], mission='', remarques
         onRequestClose={closeModal}
         contentLabel={`Modale du projet ${title}`}
         className= 'modal'
+        closeTimeoutMS={500}
       >
       <div className='modale-content'>
         <h2 className='modale-content__title'>{title}</h2>
