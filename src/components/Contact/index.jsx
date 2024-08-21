@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 import useAnimateOnScroll from '../../utils/hooks/useAnimateOnScroll'
 import '../../styles/components/contact.scss'
@@ -6,13 +5,11 @@ import '../../styles/themes/global.scss'
 
 function Contact() {
     const [state, handleSubmit] = useForm("xkgwzand")
-    const [submitted, setSubmitted] = useState(false)
     const ref = useAnimateOnScroll()
 
     const handleFormSubmit = (event) => {
         event.preventDefault() // Prévenir le comportement par défaut du formulaire
         handleSubmit(event) // Appeler la fonction handleSubmit de Formspree
-        setSubmitted(true) // Mettre à jour l'état pour afficher le message de succès
     }
 
     return (
@@ -68,7 +65,7 @@ function Contact() {
                         field="email"
                         errors={state.errors}
                     />
-                    <label htmlFor="massage">Message</label>
+                    <label htmlFor="message">Message</label>
                     <textarea
                         name="message"
                         id="message"

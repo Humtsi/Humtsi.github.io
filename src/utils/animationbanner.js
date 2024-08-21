@@ -34,7 +34,7 @@ export function initializeCanvasAnimations(canvasId) {
     const h = Math.max(y - 0, cH - y);
     return Math.sqrt(Math.pow(l, 2) + Math.pow(h, 2));
   }
-
+  
   function addClickListeners() {
     document.addEventListener("touchstart", handleEvent);
     document.addEventListener("mousedown", handleEvent);
