@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { Link, animateScroll as scroll } from 'react-scroll';
 import '../../styles/components/header.scss'
 import '../../styles/themes/global.scss'
 import Portrait from '../../assets/images/quentinparonneau.webp'
@@ -20,10 +21,26 @@ function Header() {
         </div>
         <nav className="main-nav">
           <ul className="main-nav__list">
-            <li><a href="#apropos" data-parent="about">À propos</a></li>
-            <li><a href="#skills" data-parent="services">Compétences</a></li>
-            <li><a href="#portfolio" data-parent="works">Portfolio</a></li>
-            <li><a href="#contact" data-parent="contact">Contact</a></li>
+            <li>
+              <Link to="apropos" smooth={true} duration={1000}>
+                À propos
+              </Link>
+            </li>
+            <li>
+              <Link to="skills" smooth={true} duration={1000}>
+                Compétences
+              </Link>
+            </li>
+            <li>
+              <Link to="portfolio" smooth={true} duration={1000}>
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link to="contact" smooth={true} duration={1000}>
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -34,12 +51,28 @@ function Header() {
             <div className="line"></div>
           </div>
           <nav className={`menu ${isOpen ? 'open' : ''}`}>
-          <ul>
-            <li><a href="#apropos" data-parent="about" onClick={toggleMenu}>À propos</a></li>
-            <li><a href="#skills" data-parent="services" onClick={toggleMenu}>Compétences</a></li>
-            <li><a href="#portfolio" data-parent="works" onClick={toggleMenu}>Portfolio</a></li>
-            <li><a href="#contact" data-parent="contact" onClick={toggleMenu}>Contact</a></li>
-          </ul>
+            <ul>
+              <li>
+                <Link to="apropos" smooth={true} duration={1000} onClick={toggleMenu}>
+                  À propos
+                </Link>
+              </li>
+              <li>
+                <Link to="skills" smooth={true} duration={1000} onClick={toggleMenu}>
+                  Compétences
+                </Link>
+              </li>
+              <li>
+                <Link to="portfolio" smooth={true} duration={1000} onClick={toggleMenu}>
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link to="contact" smooth={true} duration={1000} onClick={toggleMenu}>
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </nav>
         </div>
       </div>
