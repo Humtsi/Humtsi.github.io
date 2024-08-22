@@ -3,7 +3,7 @@ import { Link } from 'react-scroll'
 import '../../styles/components/header.scss'
 import '../../styles/themes/global.scss'
 import Portrait from '../../assets/images/quentinparonneau.webp'
-
+import MenuIcon from '@mui/icons-material/Menu'
 
 function Header() {
 
@@ -17,7 +17,9 @@ function Header() {
     <header>
       <div className='nav-container'>
         <div className="logo">
-          <a href="#banner"><img src={Portrait} alt="Logo Quentin Paronneau"/></a>
+          <Link to="banner" smooth={true} duration={1000}>
+            <img className="portrait" src={Portrait} alt="Logo Quentin Paronneau"/>
+          </Link>
         </div>
         <nav className="main-nav">
           <ul className="main-nav__list">
@@ -45,11 +47,7 @@ function Header() {
         </nav>
 
         <div className="burger-menu">
-          <div className={`burger-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-          </div>
+          <MenuIcon className={`${isOpen ? 'open' : ''}`} style={{ color: '#F6F4F2' }} onClick={toggleMenu}/>
           <nav className={`menu ${isOpen ? 'open' : ''}`}>
             <ul>
               <li>
