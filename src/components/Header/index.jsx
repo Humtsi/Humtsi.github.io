@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { useState } from 'react'
+import { Link } from 'react-scroll'
 import '../../styles/components/header.scss'
 import '../../styles/themes/global.scss'
 import Portrait from '../../assets/images/quentinparonneau.webp'

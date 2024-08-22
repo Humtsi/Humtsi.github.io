@@ -1,6 +1,6 @@
 import Frontend from '../../assets/images/frontend.png'
 import Backend from '../../assets/images/backend.png'
-import useAnimateOnScroll from '../../hooks/useAnimateOnScroll'
+import useAnimateOnScroll from '../../utils/hooks/useAnimateOnScroll'
 import '../../styles/components/skills.scss'
 import '../../styles/themes/global.scss'
 
